@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run CPP File",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "Clear-Host;",
+        "g++",
+        "${file}",
+        "-o",
+        "${workspaceFolder}/exe/${fileBasenameNoExtension}.exe",
+        ";",
+        "&",
+        "${workspaceFolder}/exe/${fileBasenameNoExtension}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}
